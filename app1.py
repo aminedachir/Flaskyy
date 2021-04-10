@@ -5,7 +5,12 @@ app1 = Flask(__name__)
 @app1.route("/")
 def home():
 	user={"username":"amine"}
-	return render_template('index.html',user=user, title = "Home Page")
+	posts = [
+	{"author":{"username":"Mohamed"}},
+	{"author":{"username":"Amine"}},
+	{"author":{"username":"Khaled"}},
+	]
+	return render_template('index.html',user=user, title = "Home Page", posts = posts)
 
 if __name__ == '__main__':
 	app1.run()
