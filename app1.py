@@ -1,4 +1,4 @@
-from flask import Flask , render_template
+from flask import Flask , render_template, flash, redirect
 from forms import loginForm
 
 app1 = Flask(__name__)
@@ -13,9 +13,12 @@ def home():
 	{"author":{"username":"Khaled"}},
 	]
 	return render_template('index.html',user=user, title = "Home Page", posts = posts)
-@app1.route('/login')
+@app1.route('/login', methods=['GET', 'POST'])
 def log():
 	form=loginForm()
+	if form.validate_on_submit():
+		flash('Login requested for user {}, rememmber_me={}'.format(form.username.data, form.rememmber_me.data))
+		return redirect('/index')
 	return render_template("login.html", title="Log In", form = form)
 
 
