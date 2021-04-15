@@ -6,4 +6,4 @@ class loginForm(FlaskForm):
 	username = StringField("username", validators=[DataRequired()])
 	password = PasswordField("password", validators=[DataRequired()])
 	rememmber_me = BooleanField("rememmber_me")
-	Submit = SubmitField("Sing on")
+	amine = SubmitField("Sing on")
