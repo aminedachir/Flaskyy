@@ -2,21 +2,13 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		a:link{text-decoration: none;font-size: 40px;}
+		a:hover{color: red;}
+	</style>
 </head>
 <body>
-	<a href="/"></a>
-	<a href="/login">Login</a>
-{% with messages=get_flashed_messages() %}
-	{% if messages %}
-		<ul>
-		{% for message in messages%}
-			<li> {{ message }} </li>
-		{% endfor %}
-		</ul>
-	{% endif %}
-
-
-{% endwith %}
+	<center><br /><a href="/login">Log In</a></center>
 {% block content %}
 
 {% endblock %}

@@ -1,0 +1,17 @@
+{% with messages=get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages%} 
+			<center>
+			<br><br><br><br><br><br><br><br><br><br><br><br>
+			<a href="/login">Login</a>
+			<h1 style="color: red";>Login Succefuly</h1>
+			<li> {{ message }} </li>
+			</center>
+		{% endfor %}
+	{% endif %}
+
+
+{% endwith %}
+{% block content %}
+
+{% endblock %}

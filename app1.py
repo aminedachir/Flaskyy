@@ -5,6 +5,11 @@ app1 = Flask(__name__)
 app1.config.from_object('config')
 app1.config['SECRET_KEY'] = 'any secret string'
 
+@app1.route("/mess")
+def amine():
+	return render_template("message.html")
+
+
 @app1.route("/")
 def home():
 	user={"username":"amine"}
@@ -19,7 +24,7 @@ def log():
 	form=loginForm()
 	if form.validate_on_submit():
 		flash('Login requested for user {}, rememmber_me={}'.format(form.username.data, form.rememmber_me.data))
-		return redirect('/')
+		return redirect('/mess')
 	return render_template("login.html", title="Log In", form = form)
 
 
