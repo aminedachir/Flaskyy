@@ -1,3 +1,4 @@
+from dateTime import dateTime
 from app import db
 
 class user(db.Model):
@@ -8,3 +9,10 @@ class user(db.Model):
 
 	def __repr__(self):
 		return f"<user {self.username}>"
+
+class post(db,Model):
+	id = db.Column(db, Integer, primary_key=True)
+	body=db.Column(db.String(140))
+	timestamp = db.Column(db.DataTime, index=True, default(dateTime.utcnow))
+	user_id = db.Column(db.Integer)
+
