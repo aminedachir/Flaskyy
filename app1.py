@@ -1,13 +1,8 @@
 from flask import Flask , render_template, flash, redirect
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from forms import loginForm
 app1 = Flask(__name__)
 app1.config.from_object('config')
 app1.config['SECRET_KEY'] = 'any secret string'
-
-db = SQLAlchemy(app1)
-migrate = Migrate(db, app1)
 
 @app1.route("/mess")
 def amine():
